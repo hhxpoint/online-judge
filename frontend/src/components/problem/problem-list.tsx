@@ -33,7 +33,7 @@ export function ProblemList() {
 
     if (data) {
       const allTags = data.flatMap(p => p.tags || [])
-      const uniqueTags = [...new Set(allTags)].sort()
+      const uniqueTags = Array.from(new Set(allTags)).sort()
       setAvailableTags(uniqueTags)
     }
   }

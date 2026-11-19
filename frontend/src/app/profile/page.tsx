@@ -90,7 +90,7 @@ export default function ProfilePage() {
       .eq("user_id", userId)
       .order("solved_at", { ascending: false })
 
-    setSolvedProblems(data || [])
+    setSolvedProblems((data || []) as unknown as SolvedProblem[])
   }
 
   async function fetchRecentSubmissions(userId: string) {
